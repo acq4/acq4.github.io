@@ -1,0 +1,134 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>ACQ4 Neurophysiology Acquisition and Analysis System</title>
+</head>
+
+<body>
+    <div class="main">
+    <table class="title">
+        <tr><td>ACQ4 Neurophysiology Acquisition and Analysis System</td></tr>
+        <tr><td style="font-size: 16pt; vertical-align: bottom; height: 100%">Electrophysiology - Photostimulation - Fluorescence Imaging</td></tr>
+    </table>
+    
+    <br>
+    <div style="font-size: 14pt; text-align: center">
+    <b>ACQ4 is a python-based platform for experimental neurophysiology</b><br>developed at
+    the Allen Institute for Brain Science and the University of North Carolina, Chapel Hill. 
+    It includes support for patch-clamp electrophysiology, multiphoton imaging, 
+    scanning laser photostimulation, and many other experimental techniques. ACQ4 is
+    highly modular and extensible, allowing support to be added for new types of
+    devices, techniques, user-interface modules, and analyses.
+    </div>
+    <br><br>
+    
+    <br><br>
+    <table style="width:100%; border: 0px #000"><tr><td style="border: none; text-align: left; margin: 10px">
+        <div style="padding: 20px; font-size: 14pt; border: 1px #446 solid;">
+            <a href='screenshots.html'>Screenshots</a></br>
+            <a href='https://acq4.readthedocs.io/en/latest/'>Documentation</a></br>
+            <a href='https://groups.google.com/forum/?fromgroups#!forum/acq4'>Mailing list</a><br>
+        </div>
+    </td><td style="border: 0px; text-align: right;">
+      
+        <div style="padding: 5px; margin-bottom: 10px; border: 1px solid #446; text-align: center; width: 600px; margin-left: auto; margin-right: 0;">
+            <table style='margin-left: auto; margin-right: auto; border: 1px solid #111111;' class="noborders">
+            </table><br>
+            The latest ACQ4 version is available on github:<br><a href="https://github.com/acq4/acq4.git">https://github.com/acq4/acq4.git</a><br><br>
+            For installation instructions, see <a href="https://acq4.readthedocs.io/en/latest/userGuide/installation.html">the documentation</a><br><br>
+            
+         <!--   <a href="https://github.com/pyqtgraph/pyqtgraph/blob/develop/CHANGELOG">recent changes</a>&nbsp;&nbsp;-&nbsp;&nbsp;--><a href="http://acq4.org/downloads/">older releases</a>
+        </div><br>
+    </td></tr></table>
+<!--
+    <div style="text-align: center"><a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00003/abstract"><img src="acq4_frontiers.png" width=600></a></div>
+-->
+    <div style="border: 1px solid #446; padding: 10px; margin-left: auto; margin-right: auto; text-align: center;">
+        For an in-depth description of ACQ4, see our Frontiers article:<br>
+        <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00003/abstract"><i>ACQ4: an open-source software platform for data acquisition and analysis 
+        in neurophysiology research.</i> <br>Campagnola L, Kratz MB, and Manis PB. Front. Neuroinform., 30 January 2014 | doi: 10.3389/fninf.2014.00003</a>
+    </div>
+    <br>
+
+
+    <div class="subtitle">Features:</div>
+    <ul>
+        <li><b>Protocol design interface</b> allows easy creation of stimulation / recording protocols combining and synchronizing any number of devices.
+        <li><b>Live camera viewing</b> geared toward slice imaging for patch clamp and online analysis of calcium imaging.
+        <li><b>Scanning laser microscopy</b>.
+        <li><b>Pipette automation</b> for fast multipatch.
+        <li><b>Photostimulation mapping</b> control integrated into camera/2p viewing and protocol execution.
+        <li>Integrated motion control system--all movable devices are calibrated together into one coordinate system graph.
+        <li>Online and offline data analysis system.
+        <li>Integrated data manager allows customizable data storage, browsing, and export.
+        <li>Designed to be a flexible, general-purpose experiment acquisition and analysis interface. 
+        <li>Highly modular and scalable design--easy to expand support for new hardware and experiments.
+        <li>Open source and cross-platform. Runs in Windows, Linux, and OSX. (acquisition may be limited depending on your hardware, though)
+    </ul>
+    
+    <div class="subtitle">Supported Hardware:</div>
+    <ul>
+        <li>National Instruments DAC/ADC interfaces (anything with DAQmx support, including X, S, M, and E-series)
+        <li>MultiClamp 700A, 700B
+        <li>Most scientific cameras supported via MicroManager
+        <li>Native support for Photometrics and QImaging cameras
+        <li>Scientifica microscopes and manipulators
+        <li>Sensapex uMP manipulators
+        <li>Microscope stages via MicroManager (experimental)
+        <li>Scanning galvometric mirrors (via DAC interface)
+        <li>Coherent Chameleon laser
+        <li>Most TTL-based shutters and voltage-controlled pockels cells
+        <li>Sutter MP285 and MPC-200 controllers
+        <li>AxoProbe, AxoPatch
+    </ul>
+    
+    <!--
+    <div class="subtitle">Requirements:</div>
+    <ul>
+        <li>Windows, Linux, or OSX
+        <li>Python 2.7
+        <li>SciPy / NumPy -- fast number crunching scientific library
+        <li>PyQt 4.8+ -- fast, mature graphical toolkit
+    </ul>
+      -->
+      
+<!--      
+    <b>Compared to:</b>
+    
+        ephus - supports laser microscopy, runs in Matlab, interface more difficult to use (in my opinion)
+                currently lacks some of ACQ4's features--
+                both projects are built on similar principles
+        pclamp/clampfit - not open source
+                  
+    Screenshots
+      
+      Example Uses:
+        Electrophysiology:
+            Patching, cell monitoring
+            IV curves, mini-PSP recordings, field recordings, STDP induction
+                - online averaging of weak signals
+                - online FFT for analyzing noise sources
+        Imaging
+            Live video for patching
+                - background subtraction for improved local contrast
+            Recording video
+            Automatic storage of image scale and location (keeps track of objectives and stage location)--allows easy generation of mosaics 
+            Calcium imaging
+                - high-pass filtering makes calcium transients easy to see
+                - draw multiple ROIs for online measurement of transients
+                - synchronized video and ephys recording/stimulation (allows simultaneous fluorescence imaging and photostimulation)
+        Photostimulation
+            Easy (one-click) calibration of scanning galvos; calibrations are stored for each camera and/or objective lens.
+            Create multiple grids / individual spots for stimulation protocols
+            Online analysis of results displayed in camera window
+            Grids and analysis results are locked to the slice
+            All data is stored with absolute position--scan maps are automatically matched with image mosaics
+            
+      Will you support X hardware?
+      How difficult is it to add support for X hardware?
+      
+    -->    
+      
+      
+  </body>
+</html>
